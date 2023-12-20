@@ -24,6 +24,17 @@ def get_current_weather(apiKey, cityName):
     response = requests.get(base_url, params=params)
     data = response.json()
 
-    return data
+    if response.status_code == 200:
+        return data
+    else:
+        print("Error getting deata")
+        return None
 
-print(get_current_weather(OWM_API_KEY, "Sandpoint"))
+def get_historical_weather(apiKey, cityName, date):
+    pass
+
+def main():
+    print("main")
+
+if __name__ == "__main__":
+    main()
